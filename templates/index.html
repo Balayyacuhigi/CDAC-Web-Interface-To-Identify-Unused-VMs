@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Month</title>
+    <style>
+        body {
+            background-image: url({{url_for('static',filename='index.jpg')}});
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            margin: 100px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Select Time Period</h1>
+        <form method="POST" action="/vm_access">
+            <label for="threshold">Select threshold(months)</label>
+            <select name="threshold" id="threshold">
+                <option value="1">1 week</option>
+                <option value="3">1 month</option>
+                <option value="6">3 months</option>
+                <option value="9">6 months</option>
+                <option value="12">more than 1 year</option>
+            </select>
+            <button type="submit">Check</button>
+        </form>
+    </div>
+</body>
+</html>
